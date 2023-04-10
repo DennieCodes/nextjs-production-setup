@@ -1,8 +1,9 @@
-// import { Inter } from 'next/font/google';
-// import styles from '@/styles/Home.module.css';
-
-// const inter = Inter({ subsets: ['latin'] });
+import LandingPage from "@/components/parts/LandingPage";
 
 export default function Home() {
-  return <main className="container"></main>;
+  return (
+    <main className="container">
+      <LandingPage />
+    </main>
+  );
 }
