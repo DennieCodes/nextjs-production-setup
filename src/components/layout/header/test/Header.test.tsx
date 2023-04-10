@@ -12,11 +12,13 @@ describe("Header Navigation operates correctly", () => {
     const toggle = screen.getByRole("button", { name: /main menu/i });
     const menu = screen.getByTestId("toggle-menu");
 
-    // Check that toggle-menu is first displayed
+    // Check that toggle-menu is first hiddden
     expect(menu).toHaveClass("hidden");
 
+    // Click the toggle button
     await user.click(toggle);
 
+    // Check that the toggle-menu is now displayed
     expect(menu).toHaveClass("block");
   });
 });
