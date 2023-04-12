@@ -9,9 +9,9 @@ export const authOptions = {
     }),
   ],
   secret: process.env.JWT_SECRET,
-  pages: {
-    signIn: "/login",
-  },
+  // pages: {
+  // 	signIn: '/auth/signin',
+  // },
 };
 
 export default NextAuth(authOptions);
