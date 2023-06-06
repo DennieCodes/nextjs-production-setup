@@ -16,20 +16,25 @@ const Login = ({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Sign in to your account
-        </h2>
-      </div>
-      <div>
-        {Object.values(providers).map((provider) => (
-          <div key={provider.name}>
-            <button onClick={() => void signIn(provider.id)}>
-              Sign in with {provider.name}
-            </button>
-          </div>
-        ))}
+    <main className="min-h-screen bg-white flex flex-col items-center p-4">
+      <div className="bg-slate-100 w-full p-4 rounded-md mt-10">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+          <h2 className="text-center text-2xl font-extrabold text-gray-900 mb-4">
+            Sign in to your account
+          </h2>
+        </div>
+        <div>
+          {Object.values(providers).map((provider) => (
+            <div
+              key={provider.name}
+              className="rounded-md bg-white shadow-lg text-center py-1 mb-3"
+            >
+              <button onClick={() => void signIn(provider.id)}>
+                Sign in with {provider.name}
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
 
       {session && session.user && (
@@ -38,7 +43,7 @@ const Login = ({
           <button onClick={() => void signOut()}>Sign out</button>
         </div>
       )}
-    </div>
+    </main>
   );
 };
 
